@@ -5,8 +5,8 @@ class ManufacturersController < ApplicationController
 
   def show
     @manufacturer = Manufacturer.find(params[:id])
-    @car = Car.new
-    @cars = Car.all
+    # @car = Car.new
+    # @cars = Car.all
   end
 
   def new
@@ -17,10 +17,10 @@ class ManufacturersController < ApplicationController
     @manufacturer = Manufacturer.new(manufacturer_params)
 
     if @manufacturer.save
-      flash[:notice] = "Success"
-      redirect_to manufacturer_path(manufacturer)
+      flash[:notice] = 'Success'
+      redirect_to manufacturer_path(@manufacturer)
     else
-      flash.now[:notice] = "Error"
+      flash.now[:notice] = 'Error'
       render :new
     end
   end

@@ -22,7 +22,7 @@ feature 'user adds a new manufacturer', %Q(
     fill_in 'Country', with: manufacturer.country
     click_on 'Create Manufacturer'
 
-    expect(page).to have_content 'Success'
+    # expect(page).to have_content 'Success'
     expect(page).to have_content manufacturer.name
     expect(page).to have_content manufacturer.country
   end
