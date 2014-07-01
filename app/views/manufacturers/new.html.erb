@@ -1,0 +1,14 @@
+<h1>Add a Manufacturer</h1>
+
+<%= notice %>
+<%= alert %>
+
+<%= form_for @manufacturer do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %><br>
+
+  <%= f.label :country %>
+  <%= f.text_field :country %><br>
+
+  <%= f.submit %>
+<% end %>

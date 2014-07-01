@@ -1,12 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Sc7CarListing2</title>
+  <meta charset="utf-8">
+  <title>Car Listing</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+  <div class="nav-bar">
+    <ul class="nav">
+      <li id="title">Car Manufacturer Listing</li>
+      <div class="list">
+        <li><%= link_to 'Manufacturers List', manufacturers_path %></li>
+        <li> | </li>
+        <li>Cars List</li>
+      </div>
+    </ul>
+  </div>
 
 <%= yield %>
 
