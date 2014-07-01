@@ -4,13 +4,14 @@ FactoryGirl.define do
     country 'Japan'
   end
 
-  # factory :car do
-  #   make 'Civic'
-  #   manufacturer 'Honda'
-  #   color 'silver'
-  #   mileage 75000
-  #   year 2001
-  #   description 'This is a car.'
-  # end
+  factory :car do
+    make 'Civic'
+    car_model 'Honda'
+    color 'silver'
+    mileage 75000
+    year 2001
+    description 'This is a car.'
+    manufacturer_id 1
+  end
 end
 

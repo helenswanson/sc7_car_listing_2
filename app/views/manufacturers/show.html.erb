@@ -1,12 +1,58 @@
 <h1><%= @manufacturer.name %></h1>
 <%= @manufacturer.country %>
 
-<h3>Cars</h3>
+<h2>All Cars in Inventory</h2>
 <div>
-  Insert car table here
+  <table border="1" style="width:300px">
+    <thead>
+      <tr>
+        <td>Make</td>
+        <td>Car model</td>
+        <td>Color</td>
+        <td>Year</td>
+        <td>Mileage</td>
+        <td>Description</td>
+      </tr>
+    </thead>
+    <tbody>
+      <% @cars.each do |car| %>
+        <tr>
+          <td><%= car.make %></td>
+          <td><%= car.car_model %></td>
+          <td><%= car.color %></td>
+          <td><%= car.year %></td>
+          <td><%= car.mileage %></td>
+          <td><%= car.description %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table><br/>
+</div><br/>
+
+<h2>Add a New Car</h2>
+<div>
+  <%= form_for [@manufacturer, @car] do |f| %>
+    <%= f.label :make %>
+    <%= f.text_field :make %><br>
+
+    <%= f.label :car_model %>
+    <%= f.text_field :car_model %><br>
+
+    <%= f.label :color %>
+    <%= f.text_field :color %><br>
+
+    <%= f.label :year %>
+    <%= f.text_field :year %><br>
+
+    <%= f.label :mileage %>
+    <%= f.text_field :mileage %><br>
+
+    <%= f.label :description %>
+    <%= f.text_area :description %><br>
+
+    <%= f.submit %>
+  <% end %>
 </div>
 
-<h3>Add a New Car</h3>
-<div>
-  Insert new car form here
-</div>
+
+
