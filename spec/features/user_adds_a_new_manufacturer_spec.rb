@@ -11,9 +11,7 @@ feature 'user adds a new manufacturer', %Q(
 # • If I do not specify the required information, I am presented with errors.
 # • If I specify the required information, the manufacturer is recorded and I am redirected to the index of manufacturers
 
-  before :each do
-    visit new_manufacturer_path
-  end
+  visit new_manufacturer_path
 
   scenario 'user adds a new manufacturer' do
     manufacturer = FactoryGirl.create(:manufacturer)
