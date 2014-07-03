@@ -6,10 +6,11 @@ class CarsController < ApplicationController
 
     if @car.save
       flash[:notice] = "Success"
+      redirect_to manufacturer_path(@manufacturer)
     else
       flash.now[:notice] = "Error"
+      render 'manufacturers/show'
     end
-    redirect_to manufacturer_path(@manufacturer)
   end
 
   private

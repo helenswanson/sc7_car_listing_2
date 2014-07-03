@@ -20,9 +20,9 @@ feature 'user adds a new car', %Q(
   end
 
   context 'user completes all required fields' do
-    before :each do
-      car = FactoryGirl.create(:car)
+    let(:car) { FactoryGirl.build(:car) }
 
+    before :each do
       fill_in 'Make', with: car.make
       fill_in 'Car model', with: car.car_model
       fill_in 'Color', with: car.color
