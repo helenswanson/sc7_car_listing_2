@@ -14,16 +14,21 @@ feature 'user adds a new car', %Q(
 # • If I do not specify all of the required information in the required formats, the car is not recorded and I am presented with errors.
 # • Upon successfully creating a car, I am redirected back to the index of cars.
 
-  @manufacturer = FactoryGirl.create(:manufacturer)
-  visit manufacturer_path(@manufacturer)
+  before :each do
+    @manufacturer = FactoryGirl.create(:manufacturer)
+    visit manufacturer_path(@manufacturer)
+  end
 
   context 'user completes all required fields' do
     let(:car) { FactoryGirl.build(:car) }
-    fill_in 'Make', with: car.make
-    fill_in 'Car model', with: car.car_model
-    fill_in 'Color', with: car.color
-    fill_in 'Mileage', with: car.mileage
-    fill_in 'Description', with: car.description
+
+    before :each do
+      fill_in 'Make', with: car.make
+      fill_in 'Car model', with: car.car_model
+      fill_in 'Color', with: car.color
+      fill_in 'Mileage', with: car.mileage
+      fill_in 'Description', with: car.description
+    end
 
     scenario 'user completes required fields with valid year' do
       fill_in 'Year', with: car.year

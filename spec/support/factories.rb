@@ -11,7 +11,7 @@ FactoryGirl.define do
     mileage 75000
     year 2001
     description 'This is a car.'
-    manufacturer_id 1
+    manufacturer
   end
 end
 
